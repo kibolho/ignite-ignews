@@ -11,8 +11,8 @@ export default NextAuth({
       scope: 'read:user',
     }),
   ],
-  jwt:{
-    signingKey: process.env.SIGNING_KEY,
+  // jwt:{
+  //   signingKey: process.env.SIGNING_KEY,
     // You can also specify a public key for verification if using public/private key (but private only is fine)
   // verificationKey: process.env.JWT_SIGNING_PUBLIC_KEY,
 
@@ -22,7 +22,7 @@ export default NextAuth({
   //   maxTokenAge: `${maxAge}s`, // e.g. `${30 * 24 * 60 * 60}s` = 30 days
   //   algorithms: ['HS512']
   // },
-  },
+  //},
   callbacks: {
     async session(session) {
       try {

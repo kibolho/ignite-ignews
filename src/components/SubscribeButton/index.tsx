@@ -15,8 +15,10 @@ export const SubscribeButton: React.FC<SubscribeButtonProps> = () => {
   const { push } = useRouter();
 
   const handleSubscribe = useCallback(async () => {
+    console.log(session)
     if (!session) {
       signIn('github');
+      return;
     }
 
     if (session?.activeSubscription) {
@@ -36,6 +38,7 @@ export const SubscribeButton: React.FC<SubscribeButtonProps> = () => {
       alert(err.message);
     }
   }, [session, push]);
+  
   return (
     <button
       type="button"
