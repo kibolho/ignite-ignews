@@ -4,18 +4,13 @@ import { api } from '../../services/axios';
 import { getStripeJs } from '../../services/stripe-js';
 import styles from './styles.module.scss';
 import { useCallback } from 'react';
-import { useRouter } from 'next/dist/client/router';
+import { useRouter } from 'next/router';
 
-interface SubscribeButtonProps {
-  priceId: string;
-}
-
-export const SubscribeButton: React.FC<SubscribeButtonProps> = () => {
+export const SubscribeButton: React.FC = () => {
   const [session] = useSession();
   const { push } = useRouter();
 
   const handleSubscribe = useCallback(async () => {
-    console.log(session)
     if (!session) {
       signIn('github');
       return;

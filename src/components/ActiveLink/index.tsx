@@ -1,6 +1,7 @@
-import { useRouter } from 'next/dist/client/router';
 import Link, { LinkProps } from 'next/link';
-import { cloneElement, ReactElement } from 'react';
+import { ReactElement, cloneElement } from 'react';
+
+import { useRouter } from 'next/router';
 
 interface ActiveLinkProps extends LinkProps {
   children: ReactElement;
