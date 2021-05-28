@@ -28,7 +28,7 @@ const Home: React.FC<HomeProps> = ({ product }) => (
           <span>for {product.amount} month</span>
         </p>
 
-        <SubscribeButton priceId={product.priceId} />
+        <SubscribeButton />
       </section>
 
       <img src="/images/avatar.svg" alt="Girl coding" />
